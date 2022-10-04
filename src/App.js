@@ -1,7 +1,7 @@
-
 import './App.css';
-import { useEffect } from 'react';
+import {useEffect} from "react";
 import {useTelegram} from "./hooks/useTelegram";
+import Header from "./components/Header/Header";
 
 
 
@@ -15,7 +15,11 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={onToggleButton}>togle</button>
+      <Header />
+      <Routes>
+        <Route index element={<ProductList />}/>
+        <Route path={'form'} element={<Form />}/>
+      </Routes>
     </div>
   );
 }
